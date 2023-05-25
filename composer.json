@@ -19,6 +19,9 @@
         "laravel/framework": ">=6.0,<11.0",
         "illuminate/support": ">=6.0,<9.0"
     },
+    "conflict": {
+        "illuminate/support": "*"
+    },
     "minimum-stability": "dev",
     "extra": {
         "laravel": {
