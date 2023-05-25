@@ -1,0 +1,29 @@
+{
+    "name": "tunombre/notifications",
+    "description": "Descripción de mi paquete de notificaciones",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tu Nombre",
+            "email": "tunombre@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Notifications\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "illuminate/support": "^8.0"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Notifications\\NotificationsServiceProvider"
+            ]
+        }
+    }
+}
