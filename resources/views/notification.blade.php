@@ -21,15 +21,12 @@
 @endphp
 
 @push('styles')
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('public/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/fontawesome.min.css') }}">
 @endpush
 
 @push('scripts')
-    <script src="//cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.5/bootstrap-notify.min.js"></script>
-@endpush
-
-@push('scripts')
+    <script src="{{ asset('public/js/bootstrap-notify.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $.notify({
