@@ -30,11 +30,11 @@ Notifications is a Laravel package that provides a comprehensive solution for di
 
 3. Add the following alias to the `config/app.php` file in the aliases section:
 
-```php
-'aliases' => [
-    'Notifications' => \Notifications\Notifications::class,
-],
-```
+    ```php
+    'aliases' => [
+        'Notifications' => \Notifications\Notifications::class,
+    ],
+    ```
 
 ## Usage
 
@@ -42,16 +42,16 @@ You can use the "Notifications" package in Laravel to display notifications in y
 
 ### In Controller:
 
-```php
-use Illuminate\Support\Facades\Session;
+    ```php
+    use Illuminate\Support\Facades\Session;
 
-public function store(Request $request)
-{
-    Session::flash('success', 'Success! Data has been stored.');
+    public function store(Request $request)
+    {
+        Session::flash('success', 'Success! Data has been stored.');
 
-    return redirect()->back();
-}
-```
+        return redirect()->back();
+    }
+    ```
 In this example, we use the Session facade to store a success message in the session with the key 'success'. Then, we redirect back to the previous page.
 
 ### In Blade View:
