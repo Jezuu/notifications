@@ -34,7 +34,7 @@ Notifications is a Laravel package that provides a comprehensive solution for di
 'aliases' => [
     'Notifications' => \Notifications\Notifications::class,
 ],
-
+```
 
 ## Usage
 
