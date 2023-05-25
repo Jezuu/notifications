@@ -15,10 +15,10 @@
         }
     },
     "require": {
-        "php": "^7.4",
+        "php": ">=7.4",
         "illuminate/support": "^8.0"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "extra": {
         "laravel": {
             "providers": [
