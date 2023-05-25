@@ -25,7 +25,7 @@ Notifications is a Laravel package that provides a comprehensive solution for di
 2. Publish the package's configuration and views by running the following command:
 
    ```bash
-   php artisan vendor:publish --provider="Notifications\ServiceProvider"
+   php artisan vendor:publish --provider="Notifications\NotificationsServiceProvider"
    ```
    
 ## Usage
