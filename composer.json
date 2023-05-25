@@ -19,6 +19,11 @@
         "laravel/framework": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
         "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0"
     },
+    "scripts": {
+        "post-install-cmd": [
+            "cp vendor/your-package/config/notifications.php config/"
+        ]
+    },
     "minimum-stability": "dev",
     "extra": {
         "laravel": {
