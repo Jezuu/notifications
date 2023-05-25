@@ -14,7 +14,11 @@
             "Notifications\\": "src/"
         }
     },
-    
+    "require": {
+        "php": "^7.2|^7.3|^7.4|^8.0|^8.1",
+        "laravel/framework": "^6.x|^7.x|^8.x|^9.x|^10.x",
+        "illuminate/support": "^6.x|^7.x|^8.x"
+    },
     "minimum-stability": "dev",
     "extra": {
         "laravel": {
