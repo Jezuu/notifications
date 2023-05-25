@@ -27,7 +27,15 @@ Notifications is a Laravel package that provides a comprehensive solution for di
    ```bash
    php artisan vendor:publish --provider="Notifications\NotificationsServiceProvider"
    ```
-   
+
+3. Add the following alias to the `config/app.php` file in the aliases section:
+
+```php
+'aliases' => [
+    'Notifications' => \Notifications\Notifications::class,
+],
+
+
 ## Usage
 
 You can use the "Notifications" package in Laravel to display notifications in your application. Here are examples of how to use it from the controller and Blade view:
