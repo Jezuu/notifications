@@ -1,12 +1,12 @@
 {
-    "name": "tunombre/notifications",
-    "description": "Descripción de mi paquete de notificaciones",
+    "name": "jezuu/notifications",
+    "description": "Notifications is a Laravel package that offers a comprehensive solution for displaying notifications in your application. It provides predefined components and styles for showcasing success messages, errors, warnings, and informative messages in an appealing manner. With this package, you can easily customize the notification type, the accompanying icon, and the displayed message. It seamlessly integrates with popular libraries like Font Awesome and Bootstrap Notify to deliver a sleek and user-friendly notification experience. Save time and enhance the presentation of your notification messages with Notifications package for Laravel.",
     "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {
-            "name": "Tu Nombre",
-            "email": "tunombre@example.com"
+            "name": "Jezuu",
+            "email": "info@jezuu.es"
         }
     ],
     "autoload": {
