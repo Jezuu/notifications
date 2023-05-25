@@ -42,16 +42,16 @@ You can use the "Notifications" package in Laravel to display notifications in y
 
 ### In Controller:
 
-    ```php
-    use Illuminate\Support\Facades\Session;
+```php
+use Illuminate\Support\Facades\Session;
 
-    public function store(Request $request)
-    {
-        Session::flash('success', 'Success! Data has been stored.');
+public function store(Request $request)
+{
+    Session::flash('success', 'Success! Data has been stored.');
 
-        return redirect()->back();
-    }
-    ```
+    return redirect()->back();
+}
+```
 In this example, we use the Session facade to store a success message in the session with the key 'success'. Then, we redirect back to the previous page.
 
 ### In Blade View:
