@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Notifications\\": "src/"
+            "Notifications\\\\": "src/"
         }
     },
     "require": {
@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Notifications\\NotificationsServiceProvider"
+                "Notifications\\\\NotificationsServiceProvider"
             ]
         }
     }
