@@ -15,9 +15,7 @@
         }
     },
     "require": {
-        "php": ">=7.2",
-        "laravel/framework": "^6.x|^7.x|^8.x|^9.x|^10.x",
-        "illuminate/support": "^6.x|^7.x|^8.x"
+        "php": ">=7.2"
     },
     "minimum-stability": "dev",
     "extra": {
