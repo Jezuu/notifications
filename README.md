@@ -51,7 +51,7 @@ In this example, we use the Session facade to store a success message in the ses
 ```blade
 {{-- Display a success notification --}}
 @if (session('success'))
-   {!! Notifications::notify('success', {{ session('success') }}) !!}
+    {!! Notifications::notify('success', session('success')) !!}
 @endif
 ```
 
