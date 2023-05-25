@@ -18,23 +18,23 @@ Notifications is a Laravel package that provides a comprehensive solution for di
 
 1. Run the following command to install the package via Composer:
 
-   ```bash
-   composer require jezuu/notifications
-   ```
+```bash
+composer require jezuu/notifications
+```
    
 2. Publish the package's configuration and views by running the following command:
 
-   ```bash
-   php artisan vendor:publish --provider="Notifications\NotificationsServiceProvider"
-   ```
+```bash
+php artisan vendor:publish --provider="Notifications\NotificationsServiceProvider"
+```
 
 3. Add the following alias to the `config/app.php` file in the aliases section:
 
-    ```php
-    'aliases' => [
-        'Notifications' => \Notifications\Notifications::class,
-    ],
-    ```
+```php
+'aliases' => [
+    'Notifications' => \Notifications\Notifications::class,
+],
+```
 
 ## Usage
 
