@@ -30,24 +30,29 @@ Notifications is a Laravel package that provides a comprehensive solution for di
    
 ## Usage
 
-You can display notifications from your controller using the Notifier facade. Here's an example of how to display a success notification:
+You can use the "Notifications" package in Laravel to display notifications in your application. Here are examples of how to use it from the controller and Blade view:
+
+### In Controller:
 
 ```php
-use Notifications\Facades\Notifier;
+use Illuminate\Support\Facades\Session;
 
 public function store(Request $request)
 {
-    Notifier::notify('success', 'Success! Data has been stored.');
+    Session::flash('success', 'Success! Data has been stored.');
 
     return redirect()->back();
 }
 ```
+In this example, we use the Session facade to store a success message in the session with the key 'success'. Then, we redirect back to the previous page.
 
-You can also display notifications directly from your Blade view using the notify() function. Here's an example:
+### In Blade View:
 
 ```blade
 {{-- Display a success notification --}}
-{!! Notifications::notify('success', 'Success! Data has been stored.') !!}
+@if (session('success'))
+   {!! Notifications::notify('success', {{ session('success') }}) !!}
+@endif
 ```
 
 You can customize the notification type, message, and other parameters according to your needs.
