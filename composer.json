@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Notifications\\": "src/"
+            "Notifications\\\\": "src/"
         }
     },
     "require": {
@@ -21,14 +21,14 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "cp vendor/your-package/config/notifications.php config/"
+            "@php -r \"file_put_contents('config/app.php', str_replace('/* Package Autoload */', '/* Package Autoload */\\\\n\\\\t\\\\t\\\\\\'Notifications\\\\\\' => \\\\Notifications\\\\NotificationsFacade::class,', file_get_contents('config/app.php')));\""
         ]
     },
     "minimum-stability": "dev",
     "extra": {
         "laravel": {
             "providers": [
-                "Notifications\\NotificationsServiceProvider"
+                "Notifications\\\\NotificationsServiceProvider"
             ]
         }
     }
