@@ -13,6 +13,7 @@ Notifications is a Laravel package that provides a comprehensive solution for di
 
 - PHP >= 7.2
 - Laravel >= 6.0
+- jQuery >= 3.x
 
 ## Installation
 
@@ -28,31 +29,9 @@ composer require jezuu/notifications
 php artisan vendor:publish --provider="Notifications\NotificationsServiceProvider"
 ```
 
-3. Add the following alias to the `config/app.php` file in the aliases section:
-
-```php
-'aliases' => [
-    'Notifications' => \Notifications\Notifications::class,
-],
-```
-
 ## Usage
 
-You can use the "Notifications" package in Laravel to display notifications in your application. Here are examples of how to use it from the controller and Blade view:
-
-### In Controller:
-
-```php
-use Illuminate\Support\Facades\Session;
-
-public function store(Request $request)
-{
-    Session::flash('success', 'Success! Data has been stored.');
-
-    return redirect()->back();
-}
-```
-In this example, we use the Session facade to store a success message in the session with the key 'success'. Then, we redirect back to the previous page.
+You can use the "Notifications" package in Laravel to display notifications in your application. Here are examples of how to use it from Blade view:
 
 ### In Blade View:
 
