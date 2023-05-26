@@ -19,11 +19,6 @@
         "laravel/framework": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
         "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0"
     },
-    "scripts": {
-        "post-install-cmd": [
-            "@php -r \"file_put_contents('config/app.php', str_replace('/* Package Autoload */', '/* Package Autoload */\\\\n\\\\t\\\\t\\\\\\'Notifications\\\\\\' => \\\\Notifications\\\\NotificationsFacade::class,', file_get_contents('config/app.php')));\""
-        ]
-    },
     "minimum-stability": "dev",
     "extra": {
         "laravel": {
