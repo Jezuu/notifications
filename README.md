@@ -31,7 +31,16 @@ php artisan vendor:publish --provider="Notifications\NotificationsServiceProvide
 
 ## Usage
 
-You can use the "Notifications" package in Laravel to display notifications in your application. Here are examples of how to use it from Blade view:
+You can use the "Notifications" package in Laravel to display notifications in your application. Here are examples of how to use it from Controller and Blade view:
+
+### In Controller:
+
+```php
+return Notifications::send(
+        'success',
+        'Success! Data has been stored.'
+)->view('welcome');
+```
 
 ### In Blade View:
 
