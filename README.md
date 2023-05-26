@@ -47,7 +47,7 @@ return Notifications::send(
 ```blade
 {{-- Display a success notification --}}
 @if (session('success'))
-    {!! Notifications::notify('success', session('success')) !!}
+    {!! Notifications::notify(session('success')) !!}
 @endif
 ```
 
