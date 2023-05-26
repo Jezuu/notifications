@@ -1,6 +1,6 @@
 <?php
 
-namespace NombreDelPaquete;
+namespace Notifications;
 
 class Notifications
 {
