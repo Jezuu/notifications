@@ -1,7 +1,6 @@
 @php
     $type = $type ?? 'default';
     $message = $message ?? '';
-    
     $icon = '';
 
     switch ($type) {
@@ -20,13 +19,11 @@
     }
 @endphp
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('public/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/css/fontawesome.min.css') }}">
-@endpush
-
-@push('scripts')
-    <script src="{{ asset('public/js/bootstrap-notify.min.js') }}"></script>
+<div>
+    <link rel="stylesheet" href="{{ asset('vendor/notifications/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/notifications/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/notifications/css/bootstrap.min.css') }}">
+    <script src="{{ asset('vendor/notifications/js/bootstrap-notify.min.js') }}"></script>
     <script>
         $(document).ready(function() {
             $.notify({
@@ -58,8 +55,10 @@
                 offset: 20,
                 spacing: 10,
                 z_index: 1031,
-                delay: 3300,
-                timer: 1000,
+                //delay: 3300,
+                //timer: 1000,
+                delay: 0,
+                timer: 0,
                 url_target: '_blank',
                 mouse_over: null,
                 animate: {
@@ -74,4 +73,4 @@
             });
         });
     </script>
-@endpush
+</div>
