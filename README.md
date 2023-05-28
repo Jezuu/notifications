@@ -45,9 +45,20 @@ return Notifications::send(
 ### In Blade View:
 
 ```blade
-{{-- Display a success notification --}}
 @if (session('success'))
     {!! Notifications::notify(session('success')) !!}
+@endif
+
+@if (session('error'))
+    {!! Notifications::notify(session('error')) !!}
+@endif
+
+@if (session('info'))
+    {!! Notifications::notify(session('info')) !!}
+@endif
+
+@if (session('warning'))
+    {!! Notifications::notify(session('warning')) !!}
 @endif
 ```
 

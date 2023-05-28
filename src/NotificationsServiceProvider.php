@@ -7,6 +7,11 @@ use Illuminate\Foundation\AliasLoader;
 
 class NotificationsServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
     public function boot()
     {
         $this->app->make('notifications');
@@ -26,6 +31,11 @@ class NotificationsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'notifications');
     }
 
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
     public function register()
     {
         AliasLoader::getInstance()->alias('notifications', '\Notifications\Notifications');

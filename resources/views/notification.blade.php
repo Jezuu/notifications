@@ -1,25 +1,32 @@
 @php
-    $type = $type ?? 'default';
+    $type = $type ?? '';
+    $notifications = config('notifications.types') ?? [];
+    $settings = config('notifications.settings') ?? [];
+    $notify = $notifications[$type] ?? [];
+    $class = $notify['class'] ?? '';
+    $title = $notify['title'] ?? '';
+    $icon = $notify['icon'] ?? '';
     $message = $message ?? '';
-    $icon = '';
-
-    switch ($type) {
-        case 'success':
-            $icon = 'fa-solid fa-check fa-beat';
-            break;
-        case 'error':
-            $icon = 'fa-solid fa-times fa-beat';
-            break;
-        case 'warning':
-            $icon = 'fa-solid fa-exclamation-triangle fa-beat';
-            break;
-        default:
-            $icon = 'fa-solid fa-info-circle fa-beat';
-            break;
-    }
 @endphp
 
 <div>
+    <style>
+    .close {
+        position: relative;
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    .close .fa-xmark {
+        transform: rotate(0deg);
+        transition: transform 0.3s;
+    }
+    .close:hover .fa-xmark {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+    }
+    </style>
     <link rel="stylesheet" href="{{ asset('vendor/notifications/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/notifications/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/notifications/css/bootstrap.min.css') }}">
@@ -27,14 +34,14 @@
     <script>
         $(document).ready(function() {
             $.notify({
-                title: '<strong style="padding-left: 5px;">Successful</strong>',
+                title: '<strong style="padding-left: 5px;">{{ $title }}</strong>',
                 message: "<p style='padding-top: 5px; margin-bottom: 0.3rem;'>{{ $message }}</p>",
                 icon: '{{ $icon }}',
             },{
                 template:
                     `<div data-notify="container" role="alert" class="col-xs-11 col-sm-6 alert alert-{0}">
                         <button type="button" class="close" data-notify="dismiss" style="top:7px;">
-                            <span aria-hidden="true">×</span>
+                            <i class="fa-solid fa-xmark fa-xs"></i>
                             <span class="sr-only">Close</span>
                         </button>
                         <span data-notify="icon"></span>
@@ -42,34 +49,32 @@
                         <span data-notify="message">{2}</span>
                         <a href="{3}" target="{4}" data-notify="url"></a>
                     </div>`,
-                element: 'body',
-                position: null,
-                type: "{{ $type }}",
-                allow_dismiss: true,
-                newest_on_top: false,
-                showProgressbar: false,
+                element: "{{ $settings['element'] }}",
+                position: "{{ $settings['position'] }}",
+                type: "{{ $class }}",
+                allow_dismiss: "{{ $settings['allow_dismiss'] }}",
+                newest_on_top: "{{ $settings['newest_on_top'] }}",
+                showProgressbar: "{{ $settings['showProgressbar'] }}",
                 placement: {
-                    from: "top",
-                    align: "center"
+                    from: "{{ $settings['placement']['from'] }}",
+                    align: "{{ $settings['placement']['align'] }}"
                 },
-                offset: 20,
-                spacing: 10,
-                z_index: 1031,
-                //delay: 3300,
-                //timer: 1000,
-                delay: 0,
-                timer: 0,
-                url_target: '_blank',
-                mouse_over: null,
+                offset: Number("{{ (int)$settings['offset'] }}"),
+                spacing: Number("{{ (int)$settings['spacing'] }}"),
+                z_index: Number("{{ (int)$settings['z_index'] }}"),
+                delay: Number("{{ (int)$settings['delay'] }}"),
+                timer: Number("{{ (int)$settings['timer'] }}"),
+                url_target: "{{ $settings['url_target'] }}",
+                mouse_over: "{{ $settings['mouse_over'] }}",
                 animate: {
-                    enter: 'animated bounceInDown',
-                    exit: 'animated bounceOutUp'
+                    enter: "{{ $settings['animate']['enter'] }}",
+                    exit: "{{ $settings['animate']['exit'] }}"
                 },
-                onShow: null,
-                onShown: null,
-                onClose: null,
-                onClosed: null,
-                icon_type: 'class',
+                onShow: "{{ $settings['onShow'] }}",
+                onShown: "{{ $settings['onShown'] }}",
+                onClose: "{{ $settings['onClose'] }}",
+                onClosed: "{{ $settings['onClosed'] }}",
+                icon_type: "{{ $settings['icon_type'] }}",
             });
         });
     </script>
