@@ -38,7 +38,8 @@ You can use the "Notifications" package in Laravel to display notifications in y
 ```php
 return Notifications::send(
         'success',
-        'Success! Data has been stored.'
+        'Data has been stored.',
+        false
 )->view('welcome');
 ```
 

@@ -5,19 +5,24 @@ namespace Notifications;
 class Notifications
 {
     protected static $type;
+    protected static $static;
 
     /**
      * Sends a notification of the specified type with the given message.
      *
      * @param string $type     Notification type (success, error, info, warning).
      * @param string $message  Notification message.
+     * @param bool $static     Indicates whether the notification should be static.
      *
      * @return Notifications   Instance of the Notifications class.
      */
-    public static function send($type, $message)
+    public static function send($type, $message, $static = false)
     {
-        session()->now($type, $message);
+        session()->now($type, $message, $static);
+
+        self::$static = $static;
         self::$type = $type;
+
         return new self();
     }
 
@@ -31,10 +36,14 @@ class Notifications
     public static function notify($message)
     {
         $ret = view('notifications::notification')->with([
+            'static' => self::$static,
             'type' => self::$type,
-            'message' => $message
+            'message' => $message,
         ]);
+
+        self::$static = false;
         self::$type = null;
+
         return $ret;
     }
 
